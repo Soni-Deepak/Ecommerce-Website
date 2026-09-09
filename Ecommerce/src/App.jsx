@@ -5,9 +5,11 @@ import Auth from './pages/Auth'
 import Checkout from './pages/Checkout'
 import Navbar from './components/Navbar'
 import "./App.css"
+import AuthProvider from './context/AuthContext'
 
 const App = () => {
   return (
+    <AuthProvider>
     <div className='app' >
       <Navbar />
       <Routes>
@@ -16,6 +18,7 @@ const App = () => {
         <Route path='/checkout' element = {<Checkout /> }  />
       </Routes>
     </div>
+    </AuthProvider>
   )
 }
 
