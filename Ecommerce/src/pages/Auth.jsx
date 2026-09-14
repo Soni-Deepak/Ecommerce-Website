@@ -10,7 +10,7 @@ const Auth = () => {
   const navigate = useNavigate()
   
   
-  const { signUp, user, logout, login } = useContext(AuthContext);
+  const { signUp, login } = useContext(AuthContext);
 
   const {
     register,
@@ -38,15 +38,6 @@ const Auth = () => {
     <div className="page">
       <div className="container">
         <div className="auth-container">
-          {user && <p>user Logged in: {user.email}</p>}
-
-          <button
-            onClick={() => {
-              logout();
-            }}
-          >
-            Logout
-          </button>
 
           <h1 className="page-title">
             {mode === "signup" ? "Sign Up" : "Login"}
