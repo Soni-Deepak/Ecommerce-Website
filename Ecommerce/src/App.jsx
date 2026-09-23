@@ -7,10 +7,12 @@ import Navbar from './components/Navbar'
 import "./App.css"
 import AuthProvider from './context/AuthContext'
 import ProductDetails from "./pages/ProductDetails";
+import CartProvider from './context/CartContext'
 
 const App = () => {
   return (
     <AuthProvider>
+      <CartProvider>
     <div className='app' >
       <Navbar />
       <Routes>
@@ -20,6 +22,7 @@ const App = () => {
         <Route path='/products/:id' element = {<ProductDetails /> }  />
       </Routes>
     </div>
+    </CartProvider>
     </AuthProvider>
   )
 }
